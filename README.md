@@ -3,7 +3,6 @@
 [![TypeScript Strict](https://img.shields.io/badge/TypeScript-100%25%20Strict-blue?style=flat-square&logo=typescript)](tsconfig.json)
 [![Node.js Tests](https://img.shields.io/badge/Node.js%20Tests-9%20Passing-emerald?style=flat-square)](backend/tests)
 [![Vite Build](https://img.shields.io/badge/Vite-Production%20Build%20OK-blue?style=flat-square)](frontend)
-[![Python Compatible](https://img.shields.io/badge/Python%20Normalizer-Passing-amber?style=flat-square)](scripts/normalize.py)
 
 A 100% full-stack TypeScript song catalog and analytics platform built for the **Vivpro Full-Stack Take-Home Assessment**. The solution ingests and reconciles messy, disagreeing column-oriented music catalog exports, serves a production-grade REST API with true full-dataset sorting, and provides an interactive React dashboard with search, persistent star ratings, and data quirk visualisations.
 
@@ -11,7 +10,7 @@ A 100% full-stack TypeScript song catalog and analytics platform built for the *
 
 ## 3–5 Sentence Tour of the Solution
 
-1. **Reconciliation Pipeline (`scripts/normalize.ts` & `scripts/normalize.py`):** Ingests two disagreeing pipeline exports with strong TypeScript types, resolves schema conflicts (preserving higher-precision float values while enriching with new attributes like `valence`), cleans dirty strings, clamps out-of-range features ($[0.0, 1.0]$), and fixes an upstream unit mismatch where song durations were recorded in seconds instead of milliseconds.
+1. **Reconciliation Pipeline (`scripts/normalize.ts`):** Ingests two disagreeing pipeline exports with strong TypeScript types, resolves schema conflicts (preserving higher-precision float values while enriching with new attributes like `valence`), cleans dirty strings, clamps out-of-range features ($[0.0, 1.0]$), and fixes an upstream unit mismatch where song durations were recorded in seconds instead of milliseconds.
 2. **Backend API (`backend/src/`):** A strictly-typed Express.js TypeScript REST service providing full-dataset sorting, offset pagination, persistent 1–5 star ratings that survive process restarts, and case/spacing-insensitive title search designed specifically to handle real-world non-unique titles (e.g. distinct tracks titled *"Perfect"*).
 3. **Frontend Dashboard (`frontend/src/`):** A modern React + TypeScript single-page application featuring sortable table columns that coordinate with the API, 10-row pagination, CSV view export, search feedback with multi-match detection, and a custom SVG chart revealing dataset quirks.
 4. **Code Quality & Critique (`REVIEW.md`):** A senior-level pull request review of `review/buggy_api.py`, ranking 7 critical blockers (including pagination off-by-one errors and post-slice sorting bugs) and 4 minor nits with precise remediation code.
@@ -31,11 +30,7 @@ A 100% full-stack TypeScript song catalog and analytics platform built for the *
 Generate the clean dataset (`data/songs_clean.json`) from the raw sources:
 
 ```bash
-# Using TypeScript (Recommended)
 npm run normalize
-
-# Or using Python 3 (Alternative)
-python3 scripts/normalize.py
 ```
 
 ---
@@ -90,9 +85,7 @@ vivpro/
 │   ├── buggy_api.py              # Candidate file for AI PR review
 │   └── README.md
 ├── scripts/
-│   ├── normalize.ts              # TypeScript normalization engine
-│   ├── normalize.js              # Node.js normalization engine
-│   └── normalize.py              # Python 3 alternative normalizer
+│   └── normalize.ts              # TypeScript normalization engine
 ├── backend/
 │   ├── src/
 │   │   ├── types.ts              # Centralized TypeScript domain contracts

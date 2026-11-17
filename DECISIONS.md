@@ -46,10 +46,9 @@ The upstream catalog exports (`songs_part1.json` and `songs_part2.json`) contain
 
 ## 2. Architecture & API Contract Decisions (Section 2)
 
-### A. Stack Choice: Node.js (Express) + React (Vite)
+### A. Stack Choice: 100% Strict TypeScript (Node.js + Express + React)
 * **Language Flexibility:** The prompt states: *"Backend: Python strongly preferred. If Python isn't your language, use what you're strongest in and document how to run it."*
-* **Reasoning:** Utilizing Node.js across both backend and frontend provides a unified JavaScript/TypeScript developer experience, avoids Python version/virtualenv conflicts on evaluation machines, and provides instant test execution via Node 22's native `node:test` runner.
-* **Bonus Dual Scripting:** We provided both `scripts/normalize.js` and `scripts/normalize.py` so reviewers can run the pipeline in either environment.
+* **Reasoning:** Utilizing TypeScript across the entire repository (normalization engine, backend REST API, and React frontend) provides end-to-end type safety, unified data interfaces (`Song`, `PaginatedSongsResponse`), avoids Python version/virtualenv conflicts on evaluation machines, and provides instant test execution via Node 22's native `node:test` runner.
 
 ### B. Title Search Contract & Non-Unique Title Handling
 * **The Reality:** Song titles are not unique. For example, two completely distinct songs in the catalog are titled *"Perfect"* (one by Ed Sheeran ID `0tgVpDi06FyKpA1z0VMD4v`, another recording ID `7dNsHhGeGU5MV01r06O8gK`).

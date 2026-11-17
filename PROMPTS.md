@@ -37,7 +37,7 @@ This log documents the interaction sequence, prompt steering, turning points, an
   * When running scaffolding commands, the AI initiated an interactive `npm create vite@latest` CLI which hung waiting for interactive keyboard input `(y)`.
 * **How It Was Corrected / Overruled:**
   * The process was promptly cancelled. Instead of running fragile interactive CLI generators, we created deterministic `package.json` manifests directly, ensuring zero interactive stalls and reproducible installs.
-  * To maximize compatibility, we implemented **dual normalization scripts** (`scripts/normalize.js` and `scripts/normalize.py`) so any reviewer on any platform can run either pipeline with zero dependencies.
+  * The entire codebase was unified into **100% strict TypeScript** (`scripts/normalize.ts`, Express backend, React UI), eliminating redundant scripts and ensuring end-to-end type safety.
 
 ---
 
