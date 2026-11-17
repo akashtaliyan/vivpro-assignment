@@ -111,7 +111,7 @@ vivpro/
 │   │   └── main.tsx
 │   ├── index.html
 │   ├── tsconfig.json
-│   ├── vite.config.js
+│   ├── vite.config.ts
 │   └── package.json
 ├── DECISIONS.md                  # Comprehensive decision & tradeoff log
 ├── REVIEW.md                     # Senior PR review of buggy_api.py

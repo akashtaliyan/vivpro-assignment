@@ -258,6 +258,10 @@ export function runNormalization(): void {
 }
 
 // Execute when invoked directly
-if (typeof require !== 'undefined' && require.main === module) {
+const isDirectCall =
+  (typeof require !== 'undefined' && require.main === module) ||
+  Boolean(process.argv[1] && (process.argv[1].endsWith('normalize.ts') || process.argv[1].endsWith('normalize.js')));
+
+if (isDirectCall) {
   runNormalization();
 }
