@@ -1,0 +1,27 @@
+{
+  "name": "vivpro-songs-backend",
+  "version": "1.0.0",
+  "description": "Production-grade REST API for normalized songs catalog with full-dataset sorting, pagination, and persistent ratings (TypeScript)",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "normalize": "tsx ../scripts/normalize.ts"
+  },
+  "keywords": ["fastapi", "express", "vivpro", "rest-api", "songs", "typescript"],
+  "author": "Akash Taliyan",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

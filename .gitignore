@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+*.tmp.json
+
+# Production & Build outputs
+dist/
+build/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Environment & OS
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Archives & Internal candidate files
+*.zip
+*.pdf
+TAKE_HOME.pdf
+INTERVIEW_PREP.md
+scratch/
